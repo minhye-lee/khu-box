@@ -20,7 +20,7 @@ class SignUp extends Component {
                                 Username
                             </Form.Label>
                             <Col sm={10}>
-                                <Form.Control type="password" placeholder="Username" />
+                                <Form.Control type="username" placeholder="Username" />
                             </Col>
                     </Form.Group>
                     <Form>
