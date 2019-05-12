@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Header from '../component/Header'
-import Folder from '../component/Folder'
+import FolderList from '../component/FolderList'
 
 class Home extends Component {
     render = () => {
         return (
             <div>
                 <Header/>
-                <Folder/>
+                <FolderList/>
             </div>
         )
     }
