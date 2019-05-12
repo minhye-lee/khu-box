@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Form, Row, Col, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import InputWithLabel from './InputWithLabel'
 
 
 class Login extends Component {
@@ -8,24 +9,8 @@ class Login extends Component {
         return (
             <div>
                 <h4>로그인</h4>
-                <Form>
-                    <Form.Group as={Row} controlId="formHorizontalEmail">
-                        <Form.Label column sm={2}>
-                            Email
-                        </Form.Label>
-                        <Col sm={10}>
-                            <Form.Control type="email" placeholder="Email" />
-                        </Col>
-                    </Form.Group>
-                    <Form.Group as={Row} controlId="formHorizontalPassword">
-                        <Form.Label column sm={2}>
-                            Password
-                        </Form.Label>
-                        <Col sm={10}>
-                            <Form.Control type="password" placeholder="Password" />
-                        </Col>
-                    </Form.Group>
-                </Form>
+                <InputWithLabel label="Email" type="Email" placeholder="Email"/>
+                <InputWithLabel label="Password" type="Password" placeholder="Password"/>
                 <Button variant="secondary" size="lg" block>
                     Login
                 </Button>

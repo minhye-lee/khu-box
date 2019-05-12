@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Col, Form, Row} from "react-bootstrap";
 
 const InputWithLabel = ({label, ...rest}) => (
