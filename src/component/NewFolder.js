@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import add from '../public/add.png'
 import {Figure} from "react-bootstrap"
-import SetFolderName from './SetFolderName'
 
 class NewFolder extends Component {
 

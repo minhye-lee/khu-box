@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
-import {Button, Form, Modal} from "react-bootstrap"
+import { Button, Form, Modal } from "react-bootstrap"
 import FileUpload from './FileUpload'
+import { showFileUploadModal } from "../redux/Folder";
+import { connect } from "react-redux";
 
 class FileUploadModal extends Component{
+
     render = () => {
+        const { fileShow, showFileUploadModal } = this.props
         return(
-            <Modal show={true} onHide={() => alert('ddd')}>
+            <Modal show={fileShow} onHide={() => showFileUploadModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>파일 업로드</Modal.Title>
                 </Modal.Header>
@@ -18,10 +22,10 @@ class FileUploadModal extends Component{
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => this.props.showNewFolderModal(false)}>
+                    <Button variant="secondary" onClick={() => showFileUploadModal(false)}>
                         취소
                     </Button>
-                    <Button variant="primary" onClick={() => this.props.showNewFolderModal(false)}>
+                    <Button variant="primary" onClick={() => showFileUploadModal(false)}>
                         만들기
                     </Button>
                 </Modal.Footer>
@@ -30,4 +34,15 @@ class FileUploadModal extends Component{
     }
 }
 
-export default FileUploadModal
+const mapStateToProps = (state) => ({
+    fileShow : state.folder.fileShow,
+
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    showFileUploadModal(isshow) {
+        dispatch(showFileUploadModal(isshow))
+    },
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(FileUploadModal)

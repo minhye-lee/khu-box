@@ -1,5 +1,6 @@
 const SET_FOLDER_NAME = 'SET_FOLDER_NAME'
 const SHOW_NEW_FOLDER_MODAL = 'SHOW_NEW_FOLDER_MODAL'
+const SHOW_FILE_UPLOAD_MODAL = 'SHOW_FILE_UPLOAD_MODAL'
 
 export const setFolderName = (foldername) => ({
     type : SET_FOLDER_NAME,
@@ -9,6 +10,10 @@ export const showNewFolderModal = (isshow) => ({
     type : SHOW_NEW_FOLDER_MODAL,
     isshow,
 })
+export const showFileUploadModal = (isshow) => ({
+    type : SHOW_FILE_UPLOAD_MODAL,
+    isshow,
+})
 export const initialState = {
     FolderList : [
         {
@@ -16,6 +21,7 @@ export const initialState = {
         },
     ],
     modalShow : false,
+    fileShow : false,
 
 }
 
@@ -26,12 +32,15 @@ const folder = (state=initialState, action) => {
                 ...state
             }
         case SHOW_NEW_FOLDER_MODAL:
-            console.log(action)
             return {
                 ...state,
                 modalShow : action.isshow,
             }
-
+        case SHOW_FILE_UPLOAD_MODAL:
+            return {
+                ...state,
+                fileShow : action.isshow,
+            }
         default:
             return state
     }
