@@ -4,18 +4,6 @@ import {Figure} from "react-bootstrap"
 import SetFolderName from './SetFolderName'
 
 class NewFolder extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            modalShow : false,
-        }
-    }
-
-    handleClick = ()  => {
-        this.setState({
-            modalShow : true,
-        })
-    }
 
     render = () => {
         return (
@@ -25,12 +13,11 @@ class NewFolder extends Component {
                     height={180}
                     alt="171x180"
                     src={add}
-                    onClick={() => this.handleClick()}
+                    onClick={() => alert('ddd')}
                 />
                 <Figure.Caption>
                     새 폴더
                 </Figure.Caption>
-                <SetFolderName modalShow={this.state.modalShow} />
             </Figure>
         )
     }
