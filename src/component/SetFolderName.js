@@ -32,7 +32,7 @@ class SetFolderName extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    modalShow : state.modalShow,
+    modalShow : state.folder.modalShow,
 
 })
 

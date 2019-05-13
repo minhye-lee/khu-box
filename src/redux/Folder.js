@@ -26,6 +26,7 @@ const folder = (state=initialState, action) => {
                 ...state
             }
         case SHOW_NEW_FOLDER_MODAL:
+            console.log(action)
             return {
                 ...state,
                 modalShow : action.isshow,

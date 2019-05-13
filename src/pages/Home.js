@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Header from '../component/Header'
 import FolderList from '../component/FolderList'
-
 class Home extends Component {
     render = () => {
         return (

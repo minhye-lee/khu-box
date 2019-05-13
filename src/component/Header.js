@@ -4,6 +4,7 @@ import LoginButton from './LoginButton'
 import { connect } from 'react-redux'
 import { showNewFolderModal } from '../redux/Folder'
 import SetFolderName from './SetFolderName'
+import FileUploadModal from './FileUploadModal'
 class Header extends Component {
     render = () => {
         return (
@@ -25,6 +26,7 @@ class Header extends Component {
                 </Nav>
                 <LoginButton/>
                 <SetFolderName/>
+                <FileUploadModal/>
             </Navbar>
 
         )
